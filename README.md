@@ -1,27 +1,47 @@
-# RecipeFront
+# Recipe Front
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.8.
+Welcome to the Recipe Frontend project!
 
-## Development server
+## Introduction
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This repository contains the frontend code for the Recipe application. It provides an intuitive user interface to interact with the Recipe system.
 
-## Code scaffolding
+## Getting Started
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Follow these steps to set up and run the application on your local machine:
 
-## Build
+1. **Clone the Repository**: Begin by cloning this repository to your local system.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    ```bash
+    git clone https://github.com/AkaMirai9/recipe-front.git
+    ```
 
-## Running unit tests
+2. **Install Dependencies**: Navigate to the project directory and install the required dependencies.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
 
-## Running end-to-end tests
+3. **Ensure Backend is Running**: Ensure that the backend server is up and running on your device. If not, you can find the backend repository and follow the instructions in the README.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+4. **Start the Application**: Launch the application by running one of the following commands:
 
-## Further help
+    ```bash
+    npm start
+    # or
+    yarn start
+    # or
+    ng serve
+    ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+5. **Access the Application**: Open your preferred web browser and go to [http://localhost:4200](http://localhost:4200).
+
+6. **Enjoy!**: You're now ready to use the Recipe application.
+
+## Useful Links
+
+- [Backend Repository](https://github.com/AkaMirai9/recipe-back): Link to the backend repository for the Recipe system.
+
+Feel free to explore the code and customize the application to your liking! If you have any questions or need further assistance, don't hesitate to reach out. Happy cooking! 🍳🥗
