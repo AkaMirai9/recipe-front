@@ -10,6 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { RecipeCardComponent } from './recipes/recipe-card/recipe-card.component';
 import { RecipeModalComponent } from './recipes/recipe-modal/recipe-modal.component';
 import { RecipeCreateModalComponent } from './recipes/recipe-create-modal/recipe-create-modal.component';
+import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-browser/animations";
 
 
 @NgModule({
@@ -21,6 +23,9 @@ import { RecipeCreateModalComponent } from './recipes/recipe-create-modal/recipe
     RecipeCreateModalComponent
   ],
   imports: [
+    MatSnackBarModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
