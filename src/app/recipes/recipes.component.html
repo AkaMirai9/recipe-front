@@ -1,0 +1,21 @@
+<div class="recipe-list">
+  <button class="add-button" (click)="onShowCreateModal()">Ajouter une recette</button>
+  <h1>My List of Recipes</h1>
+  <div class="recipe-cards-container">
+    <app-recipe-card
+      *ngFor="let recipe of recipes"
+      [recipe]="recipe"
+      (viewDetails)="onSelectRecipe(recipe)"
+    ></app-recipe-card>
+  </div>
+</div>
+
+<app-recipe-modal
+  *ngIf="showModal && selectedRecipe"
+  [recipeId]="selectedRecipe.id"
+  (closeModal)="onCloseModal()"
+  (deleteRecipe)="onDeleteRecipe()"
+  (updatedRecipes)="onRecipesUpdated($event)">
+></app-recipe-modal>
+
+<app-recipe-create-modal *ngIf="showCreateModal" (createRecipe)="onCreateRecipe($event)" (closeModal)="onCloseCreateModal()"></app-recipe-create-modal>

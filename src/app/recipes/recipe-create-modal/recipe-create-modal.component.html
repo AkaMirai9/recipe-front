@@ -1,0 +1,22 @@
+<div class="modal">
+  <div class="modal-content">
+    <button class="close-button" (click)="closeModal.emit()">Fermer</button>
+    <h2 class="title">Nouvelle Recette</h2>
+
+    <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+      <label for="name">Nom de la recette :</label>
+      <input formControlName="name" type="text" id="name" required>
+
+      <label for="description">Description :</label>
+      <textarea formControlName="description" id="description"></textarea>
+
+      <label for="ingredients">Ingrédients : (Une ligne par ingrédient)</label>
+      <textarea formControlName="ingredients" id="ingredients"></textarea>
+
+      <label for="instructions">Instructions :</label>
+      <textarea formControlName="instructions" id="instructions"></textarea>
+
+      <button type="submit" class="create-button">Créer</button>
+    </form>
+  </div>
+</div>

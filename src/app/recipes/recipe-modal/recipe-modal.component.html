@@ -1,0 +1,37 @@
+<div *ngIf="recipe" class="modal">
+  <div class="modal-content">
+    <button class="close-button" (click)="closeModal.emit()">Fermer</button>
+    <h2 class="title" *ngIf="!isContentEditable">{{ recipe.name }}</h2>
+    <input class="title" *ngIf="isContentEditable" [(ngModel)]="recipe.name">
+    <p class="element">Description: {{ !isContentEditable ? recipe.description : "" }}</p>
+    <textarea class="element" *ngIf="isContentEditable" [(ngModel)]="recipe.description"></textarea>
+    <p>Ingredients:</p>
+    <ul *ngIf="!isContentEditable">
+      <li *ngFor="let ingredient of recipe.ingredients">{{ ingredient }}</li>
+    </ul>
+    <ul *ngIf="isContentEditable">
+      <li *ngFor="let ingredient of recipe.ingredients; let i = index">
+        <div class="ingredient-container">
+          <input type="text" [ngModel]="recipe.ingredients[i]" (ngModelChange)="updateIngredient(i, $event)" />
+          <button class="delete-ingredient" (click)="deleteIngredient(i)">Supprimer</button>
+        </div>
+      </li>
+      <li>
+        <button class="add-ingredient" (click)="addIngredient()">Ajouter un ingrédient</button>
+      </li>
+    </ul>
+
+
+
+    <p class="element">Instructions: {{ !isContentEditable ? recipe.instructions : "" }}</p>
+    <textarea class="element" *ngIf="isContentEditable" [(ngModel)]="recipe.instructions"></textarea>
+    <p>Created At: {{ recipe.createdAt | date }}</p>
+    <p>Updated At: {{ recipe.updatedAt | date }}</p>
+    <div class="action-buttons">
+      <button *ngIf="!isContentEditable" class="delete-button" (click)="deleteRecipe.emit()" >Supprimer</button>
+      <button *ngIf="isContentEditable" class="cancel-button" (click)="cancelChanges()" >Annuler</button>
+      <button *ngIf="!isContentEditable" class="update-button" (click)="toggleEdit()" >Modifier</button>
+      <button *ngIf="isContentEditable" class="validate-button" (click)="saveChanges()" >Valider</button>
+    </div>
+  </div>
+</div>

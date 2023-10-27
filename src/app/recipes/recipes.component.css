@@ -1,0 +1,33 @@
+.recipe-list {
+  background-color: #f3f5f7;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #2ecc71;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.recipe-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.add-button {
+  background-color: #2ecc71;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.add-button:hover {
+  background-color: #27ae60;
+}
+
