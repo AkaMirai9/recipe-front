@@ -40,6 +40,15 @@ Follow these steps to set up and run the application on your local machine:
 
 6. **Enjoy!**: You're now ready to use the Recipe application.
 
+## Useful Infomations
+
+The first page will be the login page, to log in you will need to use the following ultra-secure credentials:
+
+```
+  login:    admin
+  password: admin
+```
+
 ## Useful Links
 
 - [Backend Repository](https://github.com/AkaMirai9/recipe-back): Link to the backend repository for the Recipe system.

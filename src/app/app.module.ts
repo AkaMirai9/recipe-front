@@ -12,6 +12,7 @@ import { RecipeModalComponent } from './recipes/recipe-modal/recipe-modal.compon
 import { RecipeCreateModalComponent } from './recipes/recipe-create-modal/recipe-create-modal.component';
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-browser/animations";
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-b
     RecipesComponent,
     RecipeCardComponent,
     RecipeModalComponent,
-    RecipeCreateModalComponent
+    RecipeCreateModalComponent,
+    LoginComponent
   ],
   imports: [
     MatSnackBarModule,
