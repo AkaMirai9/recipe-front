@@ -2,7 +2,7 @@
   background-color: #f3f5f7;
   padding: 20px;
   max-width: 400px;
-  margin: 0 auto;
+  margin: 0 auto; /* Ajout pour centrer */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -15,7 +15,7 @@ h1 {
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin: 15px auto;
 }
 
 label {
@@ -24,7 +24,7 @@ label {
 }
 
 .form-control {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   font-size: 1rem;
   border: 1px solid #ccc;
