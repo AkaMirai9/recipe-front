@@ -1,9 +1,19 @@
 <div class="recipe-list">
   <button class="add-button" (click)="onShowCreateModal()">Ajouter une recette</button>
   <h1>My List of Recipes</h1>
+  <div class="filter-container">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Rechercher une recette" />
+    <input type="text" [(ngModel)]="ingredientSearchTerm" placeholder="Rechercher par ingrédient" />
+    <div class="button-container">
+      <button (click)="onSearch()" class="filter-button">Rechercher</button>
+      <button (click)="onCancelSearch()" class="filter-button cancel-button">Annuler</button>
+    </div>
+  </div>
+
+
   <div class="recipe-cards-container">
     <app-recipe-card
-      *ngFor="let recipe of recipes"
+      *ngFor="let recipe of filteredRecipes"
       [recipe]="recipe"
       (viewDetails)="onSelectRecipe(recipe)"
     ></app-recipe-card>

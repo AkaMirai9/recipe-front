@@ -9,9 +9,14 @@ import {RecipesService} from "./recipes.service";
 })
 export class RecipesComponent implements OnInit {
   recipes: Recipe[] = [];
+  filteredRecipes: Recipe[] = [];
   selectedRecipe: Recipe | null = null;
   showModal = false;
   showCreateModal = false;
+
+  searchTerm: string = '';
+  ingredientSearchTerm: string = '';
+
   constructor(
     private recipeService: RecipesService
   ) { }
@@ -20,30 +25,39 @@ export class RecipesComponent implements OnInit {
     this.recipeService.getRecipes().subscribe({
       next: (recipes: Recipe[]) => {
         this.recipes = recipes;
+        this.filteredRecipes = recipes;
       },
       error: (error) => {
         console.error('Fetch recipe error', error);
       }
     });
+  }
+
+  onSearch() {
+    this.filteredRecipes = this.recipes.filter(recipe =>
+      recipe.name.toLowerCase().includes(this.searchTerm.toLowerCase()) &&
+      (this.ingredientSearchTerm === '' || recipe.ingredients.map(ingredient => ingredient.toLowerCase()).includes(this.ingredientSearchTerm.toLowerCase()))
+    );
   }
 
   onDeleteRecipe() {
     this.recipeService.deleteRecipe(this.selectedRecipe?.id ?? -1).subscribe({
       next: (recipes: Recipe[]) => {
         this.recipes = recipes;
+        this.showModal = false;
+        this.onSearch();
       },
       error: (error) => {
         console.error('Fetch recipe error', error);
       }
     });
-    this.showModal = false;
+
   }
 
 
 
   onSelectRecipe(recipe: Recipe) {
     this.selectedRecipe = recipe;
-    console.log(recipe);
     this.showModal = true;
   }
 
@@ -69,11 +83,18 @@ export class RecipesComponent implements OnInit {
     this.recipeService.createRecipe(recipe).subscribe({
       next: (recipes: Recipe[]) => {
         this.recipes = recipes;
+        this.showCreateModal = false;
+        this.onSearch();
       },
       error: (error) => {
         console.error('Fetch recipe error', error);
       }
     });
-    this.showCreateModal = false;
+  }
+
+  onCancelSearch() {
+    this.searchTerm = '';
+    this.ingredientSearchTerm = '';
+    this.onSearch();
   }
 }
